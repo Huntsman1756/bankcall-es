@@ -108,3 +108,37 @@ def test_metric_is_expanded_qname(tmp_path):
     assert row["period_id"] == "202606"
     assert row["statement"] == "2701"
     assert row["source_sha256"] == "f" * 64
+
+
+# ------------------------------------------------------------------ XXE guard
+
+XXE = """<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xbrli:xbrl [
+  <!ENTITY xxe SYSTEM "file:///SENTINEL_DO_NOT_READ.txt">
+  <!ENTITY lol "&#120;&xxe;">
+]>
+<xbrli:xbrl xmlns:xbrli="http://www.xbrl.org/2003/instance"
+    xmlns:xbrldi="http://xbrl.org/2006/xbrldi"
+    xmlns:met="http://test/met">
+  <xbrli:context id="cES_0049_0002_1">
+    <xbrli:entity><xbrli:identifier>ES0049</xbrli:identifier></xbrli:entity>
+    <xbrli:period><xbrli:instant>2026-06-30</xbrli:instant></xbrli:period>
+  </xbrli:context>
+  <met:Nota contextRef="cES_0049_0002_1">&xxe;</met:Nota>
+</xbrli:xbrl>
+"""
+
+
+def test_external_entities_are_not_resolved(tmp_path):
+    """G1 contract §4.5: the ingest parser must not resolve external entities
+    or touch the network/filesystem while parsing."""
+    from bankcall import ingest
+    sentinel = tmp_path / "SENTINEL_DO_NOT_READ.txt"
+    sentinel.write_text("SECRET_SENTINEL", encoding="utf-8")
+    xxe = XXE.replace("file:///SENTINEL_DO_NOT_READ.txt",
+                      sentinel.as_uri())
+    p = tmp_path / "2701_202606.xbrl"
+    p.write_text(xxe, encoding="utf-8")
+    rows = ingest.parse_instance(p, "202606", "2701", "f" * 64)
+    row = next(r for r in rows if r["metric_local"] == "Nota")
+    assert "SECRET_SENTINEL" not in (row["value_raw"] or "")
