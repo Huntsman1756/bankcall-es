@@ -6,6 +6,24 @@ uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- Dependabot configuration for Python and GitHub Actions dependencies.
+- CodeQL static analysis for Python on pull requests, `main`, and a weekly
+  schedule.
+- GitHub issue-template configuration that directs security reports to the
+  private vulnerability-reporting flow.
+
+### Changed
+
+- CI now uses least-privilege `contents: read`, concurrency cancellation,
+  timeouts, SHA-pinned current GitHub Actions, and validates built wheel/sdist
+  metadata with `python -m build` + `twine check`.
+- README now distinguishes frozen G1-C/G1-D evidence from the authoritative
+  corrected G1-CR/G1-DR layers and documents the complete reconstruction
+  sequence.
+- Package metadata now links directly to the changelog and security policy.
+
 ## [0.1.1] - 2026-09-17
 
 ### Added
