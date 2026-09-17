@@ -6,6 +6,8 @@ uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-09-17
+
 ### Added
 
 - **G1-CR**: corrected, collision-aware revalidation of the frozen G1-C

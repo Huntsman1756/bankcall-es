@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bankcall-es"
-version = "0.1.0"
+version = "0.1.1"
 description = "Reproducible, entity-level historical financial statements for Spanish banks from Banco de España public XBRL data"
 readme = "README.md"
 license = "Apache-2.0"
