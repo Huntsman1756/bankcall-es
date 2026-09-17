@@ -8,7 +8,9 @@ Reads only frozen artifacts — never the network — under BANKCALL_ROOT
   evidence/g1/entities.json             (slot -> legal entity observations)
   evidence/g1/g1-br-evidence.json       (documented slot transfers)
   evidence/g1/dts-fingerprints.json     (concept metadata per generation)
-  evidence/g1/concept-mapping.json      (cross-generation classifications)
+  evidence/g1/concept-mapping.json      (frozen G1-C v1.0 classifications)
+  evidence/g1/g1-cr-mapping.json        (G1-CR corrected revalidation —
+                                         preferred when present)
 
 Writes BANKCALL_DATA_DIR/*.parquet (default: $BANKCALL_ROOT/data):
   facts.parquet        one row per reported fact, entity/period denormalized
@@ -249,7 +251,11 @@ def build_concepts() -> int:
     pq.write_table(pa.Table.from_pylist(rows),
                    DATA / "concepts.parquet", compression="zstd")
 
-    mapping = _read_json(EVIDENCE / "concept-mapping.json")
+    # Prefer the corrected G1-CR mapping (collision-aware revalidation of
+    # G1-C v1.0); fall back to the frozen v1.0 artifact on older checkouts.
+    cr_path = EVIDENCE / "g1-cr-mapping.json"
+    mapping = _read_json(cr_path if cr_path.exists()
+                         else EVIDENCE / "concept-mapping.json")
     pairs = [{
         "pair": pk,
         "from_qname": m.get("from_qname") or qn,

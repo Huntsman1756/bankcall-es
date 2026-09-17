@@ -1,0 +1,1688 @@
+{
+  "gates": {
+    "CROSS_TAXONOMY_CONCEPT_MAPPING": {
+      "corrected": "REVALIDATED_PASS",
+      "coverage_all_pairs": true,
+      "v1_0": "implementation defect: silent canonical-key collision (one colliding raw QName per side was shadowed by last-wins dict normalization)"
+    },
+    "NO_SILENT_SEMANTIC_DRIFT": {
+      "corrected": "PASS_WITH_CORRECTED_MAPPING",
+      "notes": "every reclassified entry is a fail-closed downgrade to NOT_COMPARABLE, or a rename upgraded to EXACT on stronger (identity) evidence; no frozen equivalence was strengthened without positive evidence",
+      "reclassified_entries": 26,
+      "v1_0": "implementation defect: equivalence/difference verdicts could rest on arbitrarily resolved role-map conflicts and silently merged inner-dict keys"
+    }
+  },
+  "generated_at": "2026-09-17T06:00:35.606368+00:00",
+  "inputs": {
+    "fingerprints": "evidence/g1/dts-fingerprints.json",
+    "fingerprints_sha256": "8a95ff97c0330ec8f392cd98a3a075c9eb8e3af89a976aac7a4815edf823a7bd",
+    "frozen_mapping": "evidence/g1/concept-mapping.json",
+    "frozen_mapping_sha256": "8c71c2cec239006dc3f47784932621cd6f4e20f7e2bd3d2cb0bdb00268b34035",
+    "versioning_reports": [
+      "evidence/g1/versioning/pc_con1_publicos_2018_01_publicos_2018_12.xml",
+      "evidence/g1/versioning/pi_in1_publicos_2018_01_publicos_2018_12.xml",
+      "evidence/g1/versioning/ps_in1_publicos_2018_01_publicos_2018_12.xml",
+      "evidence/g1/versioning/pc_con1_publicos_2018_12_publicos_2023_03.xml",
+      "evidence/g1/versioning/pi_in1_publicos_2018_12_publicos_2023_03.xml",
+      "evidence/g1/versioning/ps_in1_publicos_2018_12_publicos_2023_03.xml"
+    ]
+  },
+  "instance_trace": {
+    "{http://www.bde.es/xbrl/dict/dim}MCI": {
+      "as_dims_key": true,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.bde.es/xbrl/dict/dim}PLO": {
+      "as_dims_key": true,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.bde.es/xbrl/fws/publicos/circ-4-2017/2018-01-01_tab}tgPC_2": {
+      "as_dims_key": false,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.bde.es/xbrl/fws/publicos/circ-4-2017/2018-12-01_tab}tgPC_2": {
+      "as_dims_key": false,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}APL": {
+      "as_dims_key": true,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}BAS": {
+      "as_dims_key": true,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}CNO": {
+      "as_dims_key": true,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}CPS": {
+      "as_dims_key": true,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}ENC": {
+      "as_dims_key": true,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}FRS": {
+      "as_dims_key": true,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCB": {
+      "as_dims_key": true,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCE": {
+      "as_dims_key": true,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCF": {
+      "as_dims_key": true,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCP": {
+      "as_dims_key": true,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCY": {
+      "as_dims_key": true,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}REC": {
+      "as_dims_key": true,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}RPR": {
+      "as_dims_key": true,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}SOL": {
+      "as_dims_key": true,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}SUB": {
+      "as_dims_key": true,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}TYH": {
+      "as_dims_key": true,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/exp}BA": {
+      "as_dims_key": false,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/exp}BT": {
+      "as_dims_key": false,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/exp}MC": {
+      "as_dims_key": false,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/exp}PL": {
+      "as_dims_key": false,
+      "as_fact_metric": false,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/met}md103": {
+      "as_dims_key": false,
+      "as_fact_metric": true,
+      "as_member": false
+    },
+    "{http://www.eba.europa.eu/xbrl/crr/dict/met}mi53": {
+      "as_dims_key": false,
+      "as_fact_metric": true,
+      "as_member": false
+    },
+    "{http://www.eurofiling.info/xbrl/ext/model}hyp": {
+      "as_dims_key": false,
+      "as_fact_metric": false,
+      "as_member": false
+    }
+  },
+  "offline": true,
+  "pairs": {
+    "publicos_2018_01__publicos_2018_12": {
+      "corrected_summary": {
+        "EXACT_EQUIVALENT": 20145,
+        "NEW": 1,
+        "NOT_COMPARABLE": 25,
+        "REMOVED": 0,
+        "RENAMED_EQUIVALENT": 3,
+        "STRUCTURALLY_CHANGED": 33,
+        "UNKNOWN": 0
+      },
+      "coverage": {
+        "from_concepts": 20206,
+        "from_covered": 20206,
+        "from_missing": [],
+        "ok": true,
+        "to_concepts": 20208,
+        "to_covered": 20208,
+        "to_missing": []
+      },
+      "diff_vs_frozen": [
+        {
+          "canon": "{http://www.bde.es/xbrl/dict/dim}MCI",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.bde.es/xbrl/dict/dim}MCI",
+            "to_qnames": [
+              "{http://www.bde.es/xbrl/dict/dim}MCI"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.bde.es/xbrl/dict/dim}MCI",
+            "to_qname": "{http://www.bde.es/xbrl/dict/dim}MCI"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.bde.es/xbrl/dict/dim}PLO",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.bde.es/xbrl/dict/dim}PLO",
+            "to_qnames": [
+              "{http://www.bde.es/xbrl/dict/dim}PLO"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.bde.es/xbrl/dict/dim}PLO",
+            "to_qname": "{http://www.bde.es/xbrl/dict/dim}PLO"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.bde.es/xbrl/fws/publicos/circ-4-2017/*GEN*_tab}tgPC_2",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "EXACT_EQUIVALENT",
+            "key": "{http://www.bde.es/xbrl/fws/publicos/circ-4-2017/2018-01-01_tab}tgPC_2",
+            "to_qnames": [
+              "{http://www.bde.es/xbrl/fws/publicos/circ-4-2017/2018-01-01_tab}tgPC_2",
+              "{http://www.bde.es/xbrl/fws/publicos/circ-4-2017/2018-12-01_tab}tgPC_2"
+            ],
+            "unresolved_fields": null
+          },
+          "frozen": {
+            "changed_fields": null,
+            "classification": "RENAMED_EQUIVALENT",
+            "key": "{http://www.bde.es/xbrl/fws/publicos/circ-4-2017/2018-01-01_tab}tgPC_2",
+            "to_qname": "{http://www.bde.es/xbrl/fws/publicos/circ-4-2017/2018-12-01_tab}tgPC_2"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}APL",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}APL",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/dim}APL"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}APL",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}APL"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}BAS",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}BAS",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/dim}BAS"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}BAS",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}BAS"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}CNO",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}CNO",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/dim}CNO"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}CNO",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}CNO"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}CPS",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}CPS",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/dim}CPS"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}CPS",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}CPS"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}ENC",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}ENC",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/dim}ENC"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}ENC",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}ENC"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}FRS",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}FRS",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/dim}FRS"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}FRS",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}FRS"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCB",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCB",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCB"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCB",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCB"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCE",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCE",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCE"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCE",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCE"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCF",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCF",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCF"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCF",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCF"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCP",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCP",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCP"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCP",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCP"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCY",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCY",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCY"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCY",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCY"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}REC",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}REC",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/dim}REC"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": null,
+            "classification": "EXACT_EQUIVALENT",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}REC",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}REC"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}RPR",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}RPR",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/dim}RPR"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}RPR",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}RPR"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}SOL",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}SOL",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/dim}SOL"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}SOL",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}SOL"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}SUB",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}SUB",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/dim}SUB"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}SUB",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}SUB"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}TYH",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}TYH",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/dim}TYH"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}TYH",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/dim}TYH"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/exp}BA",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/exp}BA",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/exp}BA"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/exp}BA",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/exp}BA"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/exp}BT",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/exp}BT",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/exp}BT"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/exp}BT",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/exp}BT"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/exp}MC",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/exp}MC",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/exp}MC"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/exp}MC",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/exp}MC"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/exp}PL",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/exp}PL",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/exp}PL"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/exp}PL",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/exp}PL"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/met}md103",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/met}md103",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/met}md103"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/met}md103",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/met}md103"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eba.europa.eu/xbrl/crr/dict/met}mi53",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/met}mi53",
+            "to_qnames": [
+              "{http://www.eba.europa.eu/xbrl/crr/dict/met}mi53"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eba.europa.eu/xbrl/crr/dict/met}mi53",
+            "to_qname": "{http://www.eba.europa.eu/xbrl/crr/dict/met}mi53"
+          },
+          "kind": "reclassified"
+        },
+        {
+          "canon": "{http://www.eurofiling.info/xbrl/ext/model}hyp",
+          "corrected": {
+            "changed_fields": null,
+            "classification": "NOT_COMPARABLE",
+            "key": "{http://www.eurofiling.info/xbrl/ext/model}hyp",
+            "to_qnames": [
+              "{http://www.eurofiling.info/xbrl/ext/model}hyp"
+            ],
+            "unresolved_fields": [
+              "dimensions"
+            ]
+          },
+          "frozen": {
+            "changed_fields": [
+              "dimensions"
+            ],
+            "classification": "STRUCTURALLY_CHANGED",
+            "key": "{http://www.eurofiling.info/xbrl/ext/model}hyp",
+            "to_qname": "{http://www.eurofiling.info/xbrl/ext/model}hyp"
+          },
+          "kind": "reclassified"
+        }
+      ],
+      "frozen_summary": {
+        "EXACT_EQUIVALENT": 20145,
+        "NEW": 1,
+        "NOT_COMPARABLE": 0,
+        "REMOVED": 0,
+        "RENAMED_EQUIVALENT": 4,
+        "STRUCTURALLY_CHANGED": 57,
+        "UNKNOWN": 0
+      },
+      "inner_collision_concepts": {
+        "from": {},
+        "to": {
+          "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCY": [
+            {
+              "canon": "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/*GEN*/tab/PC_1-1/74",
+              "identical": true,
+              "raws": [
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/74",
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/74"
+              ]
+            },
+            {
+              "canon": "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/*GEN*/tab/PC_1-1/74",
+              "identical": true,
+              "raws": [
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/74",
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/74"
+              ]
+            }
+          ],
+          "{http://www.eba.europa.eu/xbrl/crr/dict/exp}MC": [
+            {
+              "canon": "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/*GEN*/tab/PC_1-1/67",
+              "identical": false,
+              "raws": [
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/67",
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/67"
+              ]
+            },
+            {
+              "canon": "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/*GEN*/tab/PC_1-1/68",
+              "identical": false,
+              "raws": [
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/68",
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/68"
+              ]
+            },
+            {
+              "canon": "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/*GEN*/tab/PC_1-1/74",
+              "identical": false,
+              "raws": [
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/74",
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/74"
+              ]
+            },
+            {
+              "canon": "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/*GEN*/tab/PC_1-1/67",
+              "identical": true,
+              "raws": [
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/67",
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/67"
+              ]
+            },
+            {
+              "canon": "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/*GEN*/tab/PC_1-1/68",
+              "identical": true,
+              "raws": [
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/68",
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/68"
+              ]
+            },
+            {
+              "canon": "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/*GEN*/tab/PC_1-1/74",
+              "identical": true,
+              "raws": [
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/74",
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/74"
+              ]
+            },
+            {
+              "canon": "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/*GEN*/tab/PC_1-1/67",
+              "identical": false,
+              "raws": [
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/67",
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/67"
+              ]
+            },
+            {
+              "canon": "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/*GEN*/tab/PC_1-1/68",
+              "identical": false,
+              "raws": [
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/68",
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/68"
+              ]
+            },
+            {
+              "canon": "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/*GEN*/tab/PC_1-1/74",
+              "identical": false,
+              "raws": [
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/74",
+                "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/74"
+              ]
+            }
+          ]
+        }
+      },
+      "qname_collisions": {
+        "from": {},
+        "to": {
+          "{http://www.bde.es/xbrl/fws/publicos/circ-4-2017/*GEN*_tab}tgPC_2": [
+            "{http://www.bde.es/xbrl/fws/publicos/circ-4-2017/2018-01-01_tab}tgPC_2",
+            "{http://www.bde.es/xbrl/fws/publicos/circ-4-2017/2018-12-01_tab}tgPC_2"
+          ]
+        }
+      },
+      "role_conflicts": {
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/12": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/12",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/12",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/12",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/12"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/13": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/13",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/13",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/13",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/13"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/20": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/20",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/20",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/20",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/20"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/23": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/23",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/23",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/23",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/23"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/25": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/25",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/25",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/25",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/25"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/31": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/31",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/31",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/31",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/31"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/40": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/40",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/40",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/40",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/40"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/45": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/45",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/45",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/45",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/45"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/47": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/47",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/47",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/47"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/48": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/48",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/48",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/48"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/49": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/49",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/49",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/49"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/5": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/5",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/5",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/5",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/5"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/6": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/6",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/6",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/6",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/6"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-1/60": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/60",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/60",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/60"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-2/18": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/18",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/18",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/18",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/18"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-2/22": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/22",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/22",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/22",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/22"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-2/24": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/24",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/24",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/24",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/24"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-2/26": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/26",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/26",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/26",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/26"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-2/29": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/29",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/29",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/29",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/29"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-2/3": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/3",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/3",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/3",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/3"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-2/32": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/32",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/32",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/32",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/32"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-2/36": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/36",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/36",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/36",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/36"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-2/41": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/41",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/41",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/41",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/41"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-2/42": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/42",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/42",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/42",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/42"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-2/43": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/43",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/43",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/43",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/43"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-2/44": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/44",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/44",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/44",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/44"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-2/50": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/50",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/50",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/50"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-2/57": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/57",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/57",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/57"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-2/8": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/8",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/8",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/8",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/8"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-3.a/11": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/11",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/11",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/11",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/11"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-3.a/17": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/17",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/17",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/17",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/17"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-3.a/19": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/19",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/19",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/19",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/19"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-3.a/2": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/2",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/2",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/2",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/2"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-3.a/21": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/21",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/21",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/21",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/21"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-3.a/30": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/30",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/30",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/30",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/30"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-3.a/35": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/35",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/35",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/35",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/35"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-3.a/4": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/4",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/4",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/4",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/4"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-3.a/51": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/51",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/51",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/51"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-3.a/53": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/53",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/53",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/53"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-3.a/55": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/55",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/55",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/55"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-3.a/56": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/56",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/56",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/56"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-3.a/58": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/58",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/58",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/58"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_1-3.a/7": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/7",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/7",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/7",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/7"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/10": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/10",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/10",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/10",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/10"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/14": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/14",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/14",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/14",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/14"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/15": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/15",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/15",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/15",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/15"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/16": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/16",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/16",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/16",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/16"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/27": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/27",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/27",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/27",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/27"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/28": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/28",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/28",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/28",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/28"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/33": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/33",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/33",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/33",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/33"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/34": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/34",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/34",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/34",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/34"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/37": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/37",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/37",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/37",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/37"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/38": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/38",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/38",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/38",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/38"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/39": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/39",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/39",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/39",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/39"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/46": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/46",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/46",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/46",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/46"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/52": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/52",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/52",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/52"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/54": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/54",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/54",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/54"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/59": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/59",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/59",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/59"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/61": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/61",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/61"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/62": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/62",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/62"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/63": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/63",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/63"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/64": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/64",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/64"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/65": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/65",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/65"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/66": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/66",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/66"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.a/9": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/9",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/9",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/9",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/9"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PC_2.b/1": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-1/1",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.b/1",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-3.a/1",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_2.a/1",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PC_1-2/1"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-1/14": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/14",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/14",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/14",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/14"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-1/21": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/21",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/21",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/21",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/21"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-1/22": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/22",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/22",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/22",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/22"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-1/3": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-5-2014/2016-06-01/tab/PI_5.a/3",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/3",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/3",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-5-2014/2016-06-01/tab/PI_5.b/3",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/3",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/3"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-1/37": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/37",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/37",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/37",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/37"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-1/44": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/44",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/44",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/44"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-1/46": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/46",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/46",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/46"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-1/47": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/47",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/47",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/47"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-1/48": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/48",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/48",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/48"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-1/5": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/5",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/5",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/5",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/5",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-5-2014/2016-06-01/tab/PI_5.a/5"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-1/52": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/52",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/52"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-1/53": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/53",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/53"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-1/57": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/57",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/57"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-1/58": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/58",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/58"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-1/59": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/59",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/59"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-1/60": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/60",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/60"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-1/7": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/7",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/7",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/7",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/7",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-5-2014/2016-06-01/tab/PI_5.a/7"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-2/11": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/11",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/11",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/11",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-5-2014/2016-06-01/tab/PI_5.a/11",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/11"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-2/12": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/12",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-5-2014/2016-06-01/tab/PI_5.a/12",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/12",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/12",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/12"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-2/25": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/25",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/25",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/25",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/25"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-2/30": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/30",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/30",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/30",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/30"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-2/34": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/34",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/34",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/34",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/34"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-2/40": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/40",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/40",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/40"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-2/42": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/42",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/42",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/42"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-2/43": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/43",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/43",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/43"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-2/50": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/50",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/50",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/50"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-2/51": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/51",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/51"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-2/54": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/54",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/54"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-2/56": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/56",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/56"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-2/6": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/6",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/6",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-5-2014/2016-06-01/tab/PI_5.a/6",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/6",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/6"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-3.a/13": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/13",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/13",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/13",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/13"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-3.a/17": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/17",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/17",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/17",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/17"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-3.a/20": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/20",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/20",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/20",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/20"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-3.a/27": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/27",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/27",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/27",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/27"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-3.a/31": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/31",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/31",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/31",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/31"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-3.a/36": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/36",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/36",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/36",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/36"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-3.a/39": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/39",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/39",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/39"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-3.a/4": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/4",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/4",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-5-2014/2016-06-01/tab/PI_5.a/4",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/4",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/4"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-3.a/41": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/41",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/41",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/41"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_1-3.a/45": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/45",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/45",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/45"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_2/1": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/1",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-5-2014/2016-06-01/tab/PI_5.a/1",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/1",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/1",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/1",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-5-2014/2016-06-01/tab/PI_5.b/1"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_2/10": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-5-2014/2016-06-01/tab/PI_5.a/10",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/10",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/10",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/10",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/10"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_2/15": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/15",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/15",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/15",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/15"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_2/16": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/16",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/16",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/16",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/16"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_2/18": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/18",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/18",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/18",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/18"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_2/19": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/19",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/19",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/19",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/19"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_2/2": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/2",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-5-2014/2016-06-01/tab/PI_5.b/2",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/2",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/2",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-5-2014/2016-06-01/tab/PI_5.a/2",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/2"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_2/23": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/23",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/23",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/23",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/23"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_2/24": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/24",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/24",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/24",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/24"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_2/26": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/26",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/26",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/26",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/26"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_2/28": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/28",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/28",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/28",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/28"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_2/29": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/29",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/29",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/29",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/29"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_2/32": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/32",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/32",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/32",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/32"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_2/33": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/33",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/33",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/33",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/33"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_2/35": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/35",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/35",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/35",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/35"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_2/38": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/38",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/38",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/38",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/38"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_2/49": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/49",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/49",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/49"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_2/55": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/55",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/55"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_2/8": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/8",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/8",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/8",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-5-2014/2016-06-01/tab/PI_5.a/8",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/8"
+        ],
+        "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-12-01/tab/PI_2/9": [
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-2/9",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-3.a/9",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_1-1/9",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-5-2014/2016-06-01/tab/PI_5.a/9",
+          "http://www.bde.es/xbrl/role/fws/publicos/circ-4-2017/2018-01-01/tab/PI_2/9"
+        ]
+      }
+    },
+    "publicos_2018_12__publicos_2023_03": {
+      "corrected_summary": {
+        "EXACT_EQUIVALENT": 20203,
+        "NEW": 0,
+        "NOT_COMPARABLE": 0,
+        "REMOVED": 0,
+        "RENAMED_EQUIVALENT": 4,
+        "STRUCTURALLY_CHANGED": 0,
+        "UNKNOWN": 0
+      },
+      "coverage": {
+        "from_concepts": 20208,
+        "from_covered": 20208,
+        "from_missing": [],
+        "ok": true,
+        "to_concepts": 20208,
+        "to_covered": 20208,
+        "to_missing": []
+      },
+      "diff_vs_frozen": [],
+      "frozen_summary": {
+        "EXACT_EQUIVALENT": 20203,
+        "NEW": 0,
+        "NOT_COMPARABLE": 0,
+        "REMOVED": 0,
+        "RENAMED_EQUIVALENT": 4,
+        "STRUCTURALLY_CHANGED": 0,
+        "UNKNOWN": 0
+      },
+      "inner_collision_concepts": {
+        "from": {},
+        "to": {}
+      },
+      "qname_collisions": {
+        "from": {
+          "{http://www.bde.es/xbrl/fws/publicos/circ-4-2017/*GEN*_tab}tgPC_2": [
+            "{http://www.bde.es/xbrl/fws/publicos/circ-4-2017/2018-01-01_tab}tgPC_2",
+            "{http://www.bde.es/xbrl/fws/publicos/circ-4-2017/2018-12-01_tab}tgPC_2"
+          ]
+        },
+        "to": {
+          "{http://www.bde.es/xbrl/fws/publicos/circ-4-2017/*GEN*_tab}tgPC_2": [
+            "{http://www.bde.es/xbrl/fws/publicos/circ-4-2017/2018-01-01_tab}tgPC_2",
+            "{http://www.bde.es/xbrl/fws/publicos/circ-4-2017/2018-12-01_tab}tgPC_2"
+          ]
+        }
+      },
+      "role_conflicts": {}
+    }
+  },
+  "product_visible_changes": [
+    "{http://www.bde.es/xbrl/dict/dim}MCI",
+    "{http://www.bde.es/xbrl/dict/dim}PLO",
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}APL",
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}BAS",
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}CNO",
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}CPS",
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}ENC",
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}FRS",
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCB",
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCE",
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCF",
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCP",
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}MCY",
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}REC",
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}RPR",
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}SOL",
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}SUB",
+    "{http://www.eba.europa.eu/xbrl/crr/dict/dim}TYH",
+    "{http://www.eba.europa.eu/xbrl/crr/dict/met}md103",
+    "{http://www.eba.europa.eu/xbrl/crr/dict/met}mi53"
+  ],
+  "schema": "bankcall-g1cr-evidence/v1"
+}

@@ -8,6 +8,13 @@ uses [Semantic Versioning](https://semver.org/).
 
 ### Added
 
+- **G1-CR**: corrected, collision-aware revalidation of the frozen G1-C
+  taxonomy mapping (`scripts/g1/taxonomy_classify_cr.py`,
+  `scripts/g1/taxonomy_g1cr.py`; evidence in `evidence/g1/g1-cr-*.json`
+  and `evidence/g1/G1-CR-REPORT.md`). G1-C v1.0 artifacts are preserved
+  byte-for-byte. Corrected verdicts: 24 `STRUCTURALLY_CHANGED` +
+  1 `EXACT_EQUIVALENT` (`REC`) fail-closed to `NOT_COMPARABLE`, and
+  `tgPC_2` upgraded to `EXACT_EQUIVALENT` on identity evidence.
 - `bankcall --version`.
 - `pl` and `pl-cons` statement aliases (the README documented `pl`; `pnl`
   keeps working).
@@ -28,6 +35,9 @@ uses [Semantic Versioning](https://semver.org/).
 - `statement --consolidated` on a raw statement id warns instead of silently
   ignoring the flag.
 - `history` resolves legal owners in one query instead of one query per row.
+- `ingest` prefers `evidence/g1/g1-cr-mapping.json` (corrected mapping)
+  over the frozen `concept-mapping.json` when present, so `changes`
+  drift flags reflect the fail-closed G1-CR verdicts.
 - Ingest fails with a clear message when the frozen corpus or an evidence
   file is missing, instead of a bare `FileNotFoundError`.
 - XBRL parsing during ingest explicitly disables external entity resolution
