@@ -30,6 +30,20 @@ console = Console()
 err = Console(stderr=True)
 
 
+def _version(value: bool) -> None:
+    if value:
+        from . import __version__
+        console.print(f"bankcall-es {__version__}")
+        raise typer.Exit()
+
+
+@app.callback()
+def _main(version: bool = typer.Option(False, "--version",
+                                       callback=_version, is_eager=True,
+                                       help="Show version and exit.")) -> None:
+    """Entity-level bank statements from Banco de España public XBRL."""
+
+
 @app.command()
 def ingest() -> None:
     """Build data/*.parquet from the frozen corpus (offline)."""
@@ -38,6 +52,22 @@ def ingest() -> None:
 
 
 # ---------------------------------------------------------------- helpers
+
+def _code(value: str) -> str:
+    try:
+        return store.norm_code(value)
+    except ValueError as e:
+        raise typer.BadParameter(str(e)) from e
+
+
+def _period(value: str | None) -> str | None:
+    if value is None:
+        return None
+    try:
+        return store.norm_period(value)
+    except ValueError as e:
+        raise typer.BadParameter(str(e)) from e
+
 
 def _transfers(con, bank_code: str, lo: str | None = None,
                hi: str | None = None) -> list[tuple]:
@@ -159,7 +189,7 @@ def _collect_member_qnames(rows: list[tuple], dims_idx: int) -> set[str]:
 @app.command()
 def entity(code: str) -> None:
     """Reporting-slot ownership history for a bank code."""
-    bc = store.norm_code(code)
+    bc = _code(code)
     con = store.connect()
     rows = con.execute(
         "SELECT DISTINCT period_id, raw_key, official_name, lifecycle_status "
@@ -192,7 +222,10 @@ def statement(code: str, period: str = typer.Option(..., "--period", "-p"),
     Facts are dimensional: the 'line item' is the MCI member, MCY/BAS/APL
     etc. qualify it.  Nothing is aggregated or summed across dimensions.
     """
-    bc, pid = store.norm_code(code), store.norm_period(period)
+    bc, pid = _code(code), _period(period)
+    if consolidated and stmt not in store.STATEMENT_ALIASES:
+        err.print("[yellow]note[/yellow]: --consolidated has no effect on "
+                  "raw statement ids")
     alias = stmt + ("-cons" if consolidated and not stmt.endswith("-cons")
                     else "")
     stmts = store.STATEMENT_ALIASES.get(alias,
@@ -230,9 +263,8 @@ def history(code: str, concept: str,
             to_p: str = typer.Option(None, "--to")) -> None:
     """Time series of a concept for a reporting slot.  Each distinct
     dimensional breakdown is its own series — never summed or spliced."""
-    bc = store.norm_code(code)
-    lo = store.norm_period(from_p) if from_p else None
-    hi = store.norm_period(to_p) if to_p else None
+    bc = _code(code)
+    lo, hi = _period(from_p), _period(to_p)
     con = store.connect()
     pred, params = _fact_filter(con, concept)
     q = ("SELECT period_id, dims, value_num, value_raw, unit, decimals "
@@ -249,18 +281,21 @@ def history(code: str, concept: str,
         raise typer.Exit(1)
     mem_lbl = _member_labels(con, _collect_member_qnames(rows, 1))
     _warn_transfers(con, bc, lo, hi)
+    owners = {}
+    for pid, name in con.execute(
+            "SELECT period_id, official_name FROM slots "
+            "WHERE bank_code = ?", [bc]).fetchall():
+        owners.setdefault(pid, name)
     t = Table(title=f"'{concept}' — slot {bc} (one series per dimension "
                     f"combination)")
     t.add_column("Series (dims)"); t.add_column("Period")
     t.add_column("Value", justify="right"); t.add_column("Legal owner")
     for pid, dims, num, raw, unit, dec in rows:
-        owner = con.execute(
-            "SELECT official_name FROM slots WHERE bank_code = ? "
-            "AND period_id = ? LIMIT 1", [bc, pid]).fetchone()
+        owner = owners.get(pid)
         t.add_row(_dims_label(dims, mem_lbl),
                   store.PERIOD_LABELS.get(pid, pid),
                   _fmt(num if num is not None else raw, dec, unit),
-                  (owner[0].strip() if owner else "?"))
+                  (owner.strip() if owner else "?"))
     console.print(t)
 
 
@@ -269,8 +304,8 @@ def compare(codes: list[str],
             period: str = typer.Option(..., "--period", "-p"),
             concept: str = typer.Option(None, "--concept", "-k")) -> None:
     """Same facts, several reporting slots, one period."""
-    pid = store.norm_period(period)
-    bcs = [store.norm_code(c) for c in codes]
+    pid = _period(period)
+    bcs = [_code(c) for c in codes]
     con = store.connect()
     pred, params = ("", [])
     if concept:
@@ -315,8 +350,10 @@ def changes(code: str,
             to_p: str = typer.Option(..., "--to")) -> None:
     """Fact-level diff of a reporting slot between two periods, with
     taxonomy-drift flags from the G1-C concept mapping."""
-    bc = store.norm_code(code)
-    lo, hi = store.norm_period(from_p), store.norm_period(to_p)
+    bc = _code(code)
+    lo, hi = _period(from_p), _period(to_p)
+    if lo >= hi:
+        raise typer.BadParameter("--from must be an earlier period than --to")
     con = store.connect()
     labels = _label_map(con)
     gens = dict(con.execute(

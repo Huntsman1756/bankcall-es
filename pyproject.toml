@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -7,7 +7,20 @@ name = "bankcall-es"
 version = "0.1.0"
 description = "Reproducible, entity-level historical financial statements for Spanish banks from Banco de España public XBRL data"
 readme = "README.md"
-license = { text = "Apache-2.0" }
+license = "Apache-2.0"
+authors = [{ name = "Huntsman1756" }]
+keywords = ["xbrl", "banco-de-espana", "banking", "financial-statements", "open-data"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business :: Financial",
+]
 requires-python = ">=3.11"
 dependencies = [
     "typer>=0.12",
@@ -17,9 +30,14 @@ dependencies = [
     "rich>=13",
 ]
 
+[project.urls]
+Repository = "https://github.com/Huntsman1756/bankcall-es"
+Issues = "https://github.com/Huntsman1756/bankcall-es/issues"
+
 [project.optional-dependencies]
 dev = [
     "pytest>=8",
+    "ruff>=0.6",
     # needed to import the G1 evidence scripts under tests/g1
     "requests>=2.31",
     "defusedxml>=0.7",
@@ -31,3 +49,16 @@ bankcall = "bankcall.cli:app"
 
 [tool.setuptools]
 packages = ["bankcall"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+# scripts/g1, tests/g1 and g0_acquisition are frozen evidence producers: kept
+# for provenance and rerun-ability, not maintained product code, so they are
+# excluded from lint churn.
+extend-exclude = ["scripts", "tests/g1", "g0_acquisition", "evidence", "docs"]
+
+[tool.ruff.lint]
+# E501 (line length) is intentionally off: rich output lines are already
+# wrapped by hand.
+ignore = ["E501"]
