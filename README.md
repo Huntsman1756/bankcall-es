@@ -89,13 +89,15 @@ phase:
 | G1-C | Taxonomy versioning, concept mapping, semantic drift | PASS (`g1-c-taxonomy-pass`) |
 | G1-CR | Corrected revalidation of G1-C (collision-aware normalization) | PASS with corrected mapping |
 | G1-D | Integration: 9 contract gates, 10 periods, 117/117 XBRL | PASS (`g1-green`) |
+| G1-DR | Revalidation of G1-D over the corrected mapping | `REVALIDATED_PASS_WITH_CORRECTED_MAPPING` |
 
 - 117 official XBRL instances, 10 reference periods (2018Q1 – 2026Q2),
   ~197,700 facts ingested.
 - Three BdE public-statement taxonomy generations fingerprinted and mapped
   concept-by-concept; 66 non-equivalences detected, none silent.
 - Evidence and the code-to-evidence chain: `evidence/g1/`,
-  `G1-REPORT.md`, `G1-C-PROVENANCE.md`, `G1-CR-REPORT.md`.
+  `G1-REPORT.md`, `G1-C-PROVENANCE.md`, `G1-CR-REPORT.md`,
+  `G1-DR-REPORT.md`.
 - The G1-B falsification is preserved in `G1-REPORT.md` — the corrected
   temporal-identity model is a feature of this product, not a footnote.
 

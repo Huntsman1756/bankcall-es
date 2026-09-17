@@ -15,6 +15,12 @@ uses [Semantic Versioning](https://semver.org/).
   byte-for-byte. Corrected verdicts: 24 `STRUCTURALLY_CHANGED` +
   1 `EXACT_EQUIVALENT` (`REC`) fail-closed to `NOT_COMPARABLE`, and
   `tgPC_2` upgraded to `EXACT_EQUIVALENT` on identity evidence.
+- **G1-DR**: revalidation of the frozen G1-D integration
+  (`scripts/g1/g1dr_revalidate.py`; `evidence/g1/g1-dr-evidence.json`,
+  `evidence/g1/G1-DR-REPORT.md`). Verdict:
+  `REVALIDATED_PASS_WITH_CORRECTED_MAPPING` — the seven non-taxonomy
+  gates are inherited byte-for-byte from G1-D; the two taxonomy gates
+  are adjudicated by G1-CR.
 - `bankcall --version`.
 - `pl` and `pl-cons` statement aliases (the README documented `pl`; `pnl`
   keeps working).
