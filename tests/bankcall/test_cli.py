@@ -8,12 +8,11 @@ propagation in `changes`.
 
 import pytest
 import typer
+from conftest import m
 from typer.testing import CliRunner
 
 from bankcall import store
 from bankcall.cli import _fmt, _resolve, app
-
-from conftest import m
 
 runner = CliRunner()
 WIDE = {"COLUMNS": "300"}  # keep rich tables unwrapped for assertions

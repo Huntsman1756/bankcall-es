@@ -1,13 +1,23 @@
-"""DuckDB access layer over the ingested Parquet tables."""
+"""DuckDB access layer over the ingested Parquet tables.
+
+Layout is resolved at import time:
+
+  BANKCALL_ROOT      root of a corpus checkout (g0_acquisition/, evidence/);
+                     defaults to the current working directory.
+  BANKCALL_DATA_DIR  where data/*.parquet lives; defaults to
+                     $BANKCALL_ROOT/data.
+"""
 
 from __future__ import annotations
 
+import os
+import re
 from pathlib import Path
 
 import duckdb
 
-REPO = Path(__file__).resolve().parent.parent
-DATA = REPO / "data"
+ROOT = Path(os.environ.get("BANKCALL_ROOT", ".")).resolve()
+DATA = Path(os.environ.get("BANKCALL_DATA_DIR", str(ROOT / "data")))
 
 PERIODS = ["201803", "201809", "201812", "202012", "202103",
            "202109", "202212", "202303", "202506", "202606"]
@@ -19,7 +29,9 @@ STATEMENT_ALIASES = {
     "balance": ["2701", "2702", "2703"],
     "balance-cons": ["6611", "6612", "6613"],
     "pnl": ["4701", "4702"],
+    "pl": ["4701", "4702"],
     "pnl-cons": ["6602", "6603"],
+    "pl-cons": ["6602", "6603"],
     "equity": ["6794"],
     "equity-cons": ["6604"],
     "cashflow": ["7701"],
@@ -49,9 +61,12 @@ def norm_code(value: str) -> str:
     v = value.strip().upper()
     if "(" in v:
         v = v.split("(", 1)[0]
-    if v.startswith("ES"):
-        v = v[2:]
-    return v.zfill(4)
+    v = v.removeprefix("ES")
+    v = v.zfill(4)
+    if not re.fullmatch(r"\d{4}", v):
+        raise ValueError(f"invalid bank code '{value}' "
+                         "(expected 4 digits, e.g. '0049')")
+    return v
 
 
 def connect() -> duckdb.DuckDBPyConnection:

@@ -1,6 +1,7 @@
 """Ingest the frozen BdE XBRL corpus into local Parquet tables.
 
-Reads only frozen artifacts — never the network:
+Reads only frozen artifacts — never the network — under BANKCALL_ROOT
+(default: the current working directory):
 
   g0_acquisition/xbrl_instances/<period>/<statement>_<period>.xbrl
   evidence/g1/taxonomy-registry.json      (per-file sha256 provenance)
@@ -9,7 +10,7 @@ Reads only frozen artifacts — never the network:
   evidence/g1/dts-fingerprints.json     (concept metadata per generation)
   evidence/g1/concept-mapping.json      (cross-generation classifications)
 
-Writes data/*.parquet:
+Writes BANKCALL_DATA_DIR/*.parquet (default: $BANKCALL_ROOT/data):
   facts.parquet        one row per reported fact, entity/period denormalized
   slots.parquet        (bank_code, suffix, period) -> legal entity element
   transfers.parquet    documented reporting-slot ownership transfers
@@ -21,7 +22,6 @@ from __future__ import annotations
 
 import hashlib
 import json
-import os
 import re
 from pathlib import Path
 
@@ -29,15 +29,30 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 from lxml import etree
 
-REPO = Path(__file__).resolve().parent.parent
-INSTANCES = REPO / "g0_acquisition" / "xbrl_instances"
-EVIDENCE = REPO / "evidence" / "g1"
-DATA = REPO / "data"
+from . import store
+
+ROOT = store.ROOT
+INSTANCES = ROOT / "g0_acquisition" / "xbrl_instances"
+EVIDENCE = ROOT / "evidence" / "g1"
+DATA = store.DATA
 
 XBRLI = "http://www.xbrl.org/2003/instance"
 XBRLDI = "http://xbrl.org/2006/xbrldi"
 
 CTX_ID_RE = re.compile(r"^cES_(\d{4})_(\d{4})_")
+
+# G1 contract §4.5: parse XBRL with external entity resolution and network
+# access disabled.
+_PARSER = etree.XMLParser(resolve_entities=False, no_network=True,
+                          load_dtd=False)
+
+
+def _read_json(path: Path) -> dict:
+    if not path.exists():
+        raise SystemExit(
+            f"{path.relative_to(ROOT)} missing — the frozen corpus is not "
+            "present (see README: Rebuilding the corpus)")
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def _localname(tag: str) -> str:
@@ -47,7 +62,7 @@ def _localname(tag: str) -> str:
 def parse_instance(path: Path, period_id: str, statement: str,
                    file_sha256: str) -> list[dict]:
     """Parse one BdE XBRL instance into fact rows."""
-    tree = etree.parse(str(path))
+    tree = etree.parse(str(path), _PARSER)
     root = tree.getroot()
     nsmap = root.nsmap
 
@@ -129,17 +144,20 @@ def parse_instance(path: Path, period_id: str, statement: str,
 
 
 def build_facts() -> int:
-    registry = json.loads(
-        (EVIDENCE / "taxonomy-registry.json").read_text(encoding="utf-8"))
+    registry = _read_json(EVIDENCE / "taxonomy-registry.json")
     sha_by_payload = {a["local_payload"]: a["instance"]["sha256"]
                       for a in registry["artifacts"]}
 
     rows: list[dict] = []
     files = sorted(INSTANCES.glob("*/*.xbrl"))
+    if not files:
+        raise SystemExit(
+            "no XBRL instances under g0_acquisition/xbrl_instances/ — the "
+            "frozen corpus is not present (see README: Rebuilding the corpus)")
     for i, path in enumerate(files, 1):
         period_id = path.parent.name
         statement = path.name.split("_", 1)[0]
-        rel = path.relative_to(REPO).as_posix()
+        rel = path.relative_to(ROOT).as_posix()
         sha = sha_by_payload.get(rel) or hashlib.sha256(
             path.read_bytes()).hexdigest()
         rows.extend(parse_instance(path, period_id, statement, sha))
@@ -160,8 +178,7 @@ def build_facts() -> int:
 
 
 def build_identity() -> int:
-    entities = json.loads(
-        (EVIDENCE / "entities.json").read_text(encoding="utf-8"))
+    entities = _read_json(EVIDENCE / "entities.json")
     rows = [{
         "period_id": o["period_id"],
         "period_end": o.get("period_end"),
@@ -179,8 +196,7 @@ def build_identity() -> int:
     pq.write_table(pa.Table.from_pylist(rows),
                    DATA / "slots.parquet", compression="zstd")
 
-    g1br = json.loads(
-        (EVIDENCE / "g1-br-evidence.json").read_text(encoding="utf-8"))
+    g1br = _read_json(EVIDENCE / "g1-br-evidence.json")
     trs = [{
         "bank_code": e["raw_sifdifu_key"].split("(", 1)[0],
         "suffix": e["raw_sifdifu_key"].split("(", 1)[1].rstrip(")"),
@@ -193,14 +209,21 @@ def build_identity() -> int:
         "first_period_successor": e["first_period_successor"],
         "handoff_date": e["official_handoff_date"],
     } for e in g1br["checks"]["code_reuse_events"]]
-    pq.write_table(pa.Table.from_pylist(trs),
-                   DATA / "transfers.parquet", compression="zstd")
+    # explicit schema: an empty event list must still produce the columns
+    pq.write_table(pa.Table.from_pylist(trs, schema=pa.schema([
+        ("bank_code", pa.string()), ("suffix", pa.string()),
+        ("raw_key", pa.string()), ("from_entity", pa.string()),
+        ("from_name", pa.string()), ("to_entity", pa.string()),
+        ("to_name", pa.string()),
+        ("last_period_predecessor", pa.string()),
+        ("first_period_successor", pa.string()),
+        ("handoff_date", pa.string()),
+    ])), DATA / "transfers.parquet", compression="zstd")
     return len(rows)
 
 
 def build_concepts() -> int:
-    fp = json.loads(
-        (EVIDENCE / "dts-fingerprints.json").read_text(encoding="utf-8"))
+    fp = _read_json(EVIDENCE / "dts-fingerprints.json")
     rows = []
     for gen, g in fp["generations"].items():
         for qn, c in g["concepts"].items():
@@ -226,8 +249,7 @@ def build_concepts() -> int:
     pq.write_table(pa.Table.from_pylist(rows),
                    DATA / "concepts.parquet", compression="zstd")
 
-    mapping = json.loads(
-        (EVIDENCE / "concept-mapping.json").read_text(encoding="utf-8"))
+    mapping = _read_json(EVIDENCE / "concept-mapping.json")
     pairs = [{
         "pair": pk,
         "from_qname": m.get("from_qname") or qn,
@@ -236,13 +258,16 @@ def build_concepts() -> int:
     } for pk, pair in mapping["pairs"].items()
         for qn, m in pair["mapping"].items()
         if m["classification"] != "EXACT_EQUIVALENT"]
-    pq.write_table(pa.Table.from_pylist(pairs),
-                   DATA / "concept_pairs.parquet", compression="zstd")
+    # explicit schema: zero non-equivalences must still produce the columns
+    pq.write_table(pa.Table.from_pylist(pairs, schema=pa.schema([
+        ("pair", pa.string()), ("from_qname", pa.string()),
+        ("to_qname", pa.string()), ("classification", pa.string()),
+    ])), DATA / "concept_pairs.parquet", compression="zstd")
     return len(rows)
 
 
 def run_ingest() -> None:
-    DATA.mkdir(exist_ok=True)
+    DATA.mkdir(parents=True, exist_ok=True)
     print("facts:")
     n = build_facts()
     print(f"  facts.parquet: {n} rows")
