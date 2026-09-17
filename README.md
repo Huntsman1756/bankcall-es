@@ -1,5 +1,8 @@
 # BankCall España
 
+[![CI](https://github.com/Huntsman1756/bankcall-es/actions/workflows/ci.yml/badge.svg)](https://github.com/Huntsman1756/bankcall-es/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/Huntsman1756/bankcall-es/actions/workflows/codeql.yml/badge.svg)](https://github.com/Huntsman1756/bankcall-es/actions/workflows/codeql.yml)
+
 **BankCall España** provides reproducible, entity-level historical financial
 statements for Spanish banks from Banco de España public XBRL data, with
 temporal legal-entity identity, taxonomy evolution and source-level
@@ -72,8 +75,9 @@ Every fact carries its dimensional qualifiers (MCI line item, MCY scope,
 BAS, APL, ...). `history` returns **one series per dimension combination**;
 `statement` lists raw facts with member labels resolved; `changes` flags
 facts whose concepts drifted between taxonomy generations
-(`STRUCTURALLY_CHANGED`, `RENAMED_EQUIVALENT`, `NEW`, `REMOVED` — from the
-G1-C concept mapping). Ambiguous concept names fail closed.
+(`STRUCTURALLY_CHANGED`, `RENAMED_EQUIVALENT`, `NEW`, `REMOVED`,
+`NOT_COMPARABLE` — from the corrected G1-CR concept mapping). Ambiguous
+concept names fail closed.
 
 ## Methodology and provenance
 
@@ -91,10 +95,15 @@ phase:
 | G1-D | Integration: 9 contract gates, 10 periods, 117/117 XBRL | PASS (`g1-green`) |
 | G1-DR | Revalidation of G1-D over the corrected mapping | `REVALIDATED_PASS_WITH_CORRECTED_MAPPING` |
 
+G1-C and G1-D are preserved as the original frozen evidence. G1-CR and
+G1-DR are the current authoritative taxonomy and integrated validation
+layers; the product prefers the corrected G1-CR mapping when available.
+
 - 117 official XBRL instances, 10 reference periods (2018Q1 – 2026Q2),
   ~197,700 facts ingested.
 - Three BdE public-statement taxonomy generations fingerprinted and mapped
-  concept-by-concept; 66 non-equivalences detected, none silent.
+  concept-by-concept; 66 current non-equivalences are explicit, including
+  25 fail-closed `NOT_COMPARABLE` classifications in the corrected mapping.
 - Evidence and the code-to-evidence chain: `evidence/g1/`,
   `G1-REPORT.md`, `G1-C-PROVENANCE.md`, `G1-CR-REPORT.md`,
   `G1-DR-REPORT.md`.
@@ -135,8 +144,10 @@ SHA-256-pinned in `evidence/g1/`):
 ### Rebuilding the corpus
 
 The corpus is reproducible from the public Banco de España source by running
-the G1 evidence pipeline in order (live network access; see each script's
-docstring):
+the evidence pipeline in order. G1-C/G1-D reproduce the original frozen
+baseline; G1-CR/G1-DR then apply the corrected, authoritative revalidation.
+Live network access is required only for the acquisition/freeze stages (see
+each script's docstring):
 
 ```bash
 python scripts/g1/discover_catalog.py        # catalog inventory (2 clean runs)
@@ -144,8 +155,10 @@ python scripts/g1/xbrl_resolve.py            # download + hash-pin instances
 python scripts/g1/identity_lifecycle.py      # slot -> legal entity mapping
 python scripts/g1/validate_identity_model.py # documented ownership transfers
 python scripts/g1/taxonomy_freeze.py         # hash-pin the DTS mirror
-PYTHONHASHSEED=0 python scripts/g1/taxonomy_g1c.py  # fingerprints + mapping
-python scripts/g1/g1d_integrate.py           # aggregate evidence + report
+PYTHONHASHSEED=0 python scripts/g1/taxonomy_g1c.py  # original frozen mapping
+python scripts/g1/g1d_integrate.py           # original frozen integration
+python scripts/g1/taxonomy_g1cr.py           # corrected offline revalidation
+python scripts/g1/g1dr_revalidate.py         # authoritative integrated verdict
 bankcall ingest
 ```
 
