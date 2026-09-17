@@ -33,11 +33,15 @@ dependencies = [
 [project.urls]
 Repository = "https://github.com/Huntsman1756/bankcall-es"
 Issues = "https://github.com/Huntsman1756/bankcall-es/issues"
+Changelog = "https://github.com/Huntsman1756/bankcall-es/blob/main/CHANGELOG.md"
+Security = "https://github.com/Huntsman1756/bankcall-es/security/policy"
 
 [project.optional-dependencies]
 dev = [
     "pytest>=8",
     "ruff>=0.6",
+    "build>=1.2",
+    "twine>=5",
     # needed to import the G1 evidence scripts under tests/g1
     "requests>=2.31",
     "defusedxml>=0.7",
